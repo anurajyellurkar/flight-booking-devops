@@ -8,10 +8,12 @@ pipeline {
     stages {
 
         stage('Checkout Code') {
-            steps {
-                git 'https://github.com/anurajyellurkar/flight-booking-devops.git'
-            }
-        }
+    steps {
+        git branch: 'main',
+            url: 'https://github.com/anurajyellurkar/flight-booking-devops.git'
+    }
+}
+
 
         stage('Trivy Scan - Filesystem') {
             steps {
